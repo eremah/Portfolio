@@ -2,6 +2,8 @@ import sys  # Contains tools in the sys module to exit the game when the player 
 import pygame  # The pygame module contains the functionality we need to make a game.
 from settings import Settings
 from ship import Ship
+from bullet import Bullet
+
 
 
 class AlienInvasion:
@@ -12,6 +14,11 @@ class AlienInvasion:
         pygame.init()  # initializes the background settings that Pygame needs to work properly.
         self.clock = pygame.time.Clock()
         self.settings = Settings()
+
+        # Running the game in fullscreen mode
+        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        # self.settings.screen_width = self.screen.get_rect().width
+        # self.settings.screen_height = self.screen.get_rect().height
 
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
